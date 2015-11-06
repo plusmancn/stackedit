@@ -366,7 +366,7 @@ define([
 		}
 		monetize.getPaymentsImmediate(function(err, payments) {
 			removeAlerts();
-			if(!isSponsor(payments)) {
+			if(!isSponsor(payments) && false) {
 				_.each(document.querySelectorAll('.modal-body'), function(modalBodyElt) {
 					var $elt = $('<div class="alert alert-danger">Please consider <a href="#">sponsoring StackEdit</a> for $5/year (or <a href="#">sign in</a> if you\'re already a sponsor).</div>');
 					$elt.find('a').click(performPayment);

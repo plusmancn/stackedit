@@ -16,6 +16,7 @@ define([
 	"providers/dropboxProvider",
 	"providers/gistProvider",
 	"providers/githubProvider",
+	"providers/gitpageProvider",
 	"providers/gdriveProvider",
 	"providers/gdrivesecProvider",
 	"providers/gdriveterProvider",
@@ -204,6 +205,9 @@ define([
 
 		// Show/hide controls depending on provider
 		$('.modal-publish [class*=" modal-publish-"]').hide().filter(".modal-publish-" + provider.providerId).show();
+
+		// 添加shell单独逻辑
+		provider.providerId.toLowerCase() === 'gitpage' ? $('.format-group').hide() : $('.format-group').show();
 
 		// Reset fields
 		utils.resetModalInputs();
