@@ -236,6 +236,12 @@ define([
 		$(".modal-publish").modal();
 	}
 
+	// Add Deploy Action
+	function performHexoDeploy(event){
+		var provider = newLocationProvider;
+		provider.hexoDeploy();
+	}
+
 	// Add a new publish location to a local document
 	function performNewLocation(event) {
 		var provider = newLocationProvider;
@@ -303,6 +309,8 @@ define([
 		}
 
 		$(".action-process-publish").click(performNewLocation);
+		// Add deploy Event
+		$(".action-process-deploy").click(performHexoDeploy);
 
 		var $customTmplCollapseElt = $('.publish-custom-template-collapse').collapse({
 			toggle: false
